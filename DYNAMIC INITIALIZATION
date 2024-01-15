@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std; 
+
+class bank
+{
+    int principle, year , RATE;
+    float rate;
+    public:
+
+    bank () {}
+
+     bank(int p, int y, float r)
+
+    { 
+      principle = p;
+      year =y;
+      rate = r;
+      int finalrate = principle;
+      for (int i=0 ; i<y; i++)
+      {
+        finalrate  = finalrate *(1 + rate ) ;
+      }
+      cout << " you can get " << finalrate << "  in " 
+      << year << " years with a rate of " << r << endl;
+      cout << " \n";
+
+    }
+
+    bank( int p , int y, int R)
+    {
+        principle=p;
+        year=y;
+        rate = float (R) /100;
+        int finalrate = principle;
+        for ( int i=0 ; i < y;  i++)
+        {
+            finalrate  =  finalrate * (1 + rate );
+
+        }   
+           cout << " you can get " << finalrate << "  in " 
+           << year << " years with a rate of " <<  R << endl;
+
+    }
+
+    
+};
+
+int main() 
+
+{
+    bank b1, b2;
+    int p, y, R;
+    float r;
+
+    cout <<" enter your diposit on bank  with rate in decimal" << endl;
+    cin >> p >> y >> r;
+    b1 = bank(p,y,r);
+
+    cout << "enter you diposit  on bank with rate in percentage " << endl;
+    cin >> p >> y >> R;
+    b2= bank(p,y,R);
+
+     
+
+     return 0;
+}
