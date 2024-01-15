@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std; 
+
+
+
+class num 
+{
+  static int count ;
+  public : 
+     num()
+     {
+      count ++;
+      cout << " your constructor is called for  " << count << endl ;
+
+     }
+     ~num()
+     {
+       cout << " your destructor is called  for " << count << endl;
+       count --;
+     }
+};
+  int num :: count=0 ;
+
+int main() 
+{
+  num n1;
+   {
+    cout << "entering the block " << endl;
+    num n2, n3;
+    cout << "exiting the block " << endl;
+
+   }
+   
+   cout << " back in main program " << endl;
+   
+
+   return 0;
+}
