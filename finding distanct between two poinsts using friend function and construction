@@ -1,0 +1,44 @@
+ #include<iostream>
+ #include<cmath>
+ using namespace std; 
+ 
+ class point
+ {
+    int a,b;
+    public: 
+    point(int x, int y)
+    {
+        a=x;
+        b=y;
+    }
+
+    void printp()
+ {
+    cout << " the points given are " << "( " << a << "," << b << ")" << endl;
+ }
+   friend int distant(point, point);
+
+};
+
+int  distant (point p, point q)
+{
+    int t,s;
+    t= pow(p.a - q.a,2);
+    s= pow(p.b - q.b,2);
+    int d= sqrt(t+s);
+    return d;
+}
+
+ int main() 
+ 
+ {
+    point p(3,5) ;
+    point q(4,6);
+   int res = distant( p ,q );
+    p.printp();
+    q.printp();
+     
+    cout << " the distance between the points is : " << res << endl; 
+ 
+     return 0;
+ }
