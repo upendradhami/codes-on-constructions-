@@ -1,1 +1,43 @@
+#include<iostream>
+using namespace std; 
 
+class student
+{
+    int id;
+    public:
+    
+       student()
+       {
+        id=0;
+       }
+
+       student ( int a) 
+       {
+        id = a;
+       }
+
+       student (student &s)
+       {
+        id = s.id; 
+       }
+       int display()
+       {
+         cout << id << endl;
+       }
+       
+};
+int main() 
+
+{
+    student s1(300);
+    student s2=s1;
+    student s3(700);
+    student s4=s3;
+    cout << " id of the student s1 is : " << s1.display() << endl;
+    cout << " id of the student s2 is : " << s2.display() << endl;
+    cout << " id of the student s3 is : " << s3.display() << endl;
+    cout << " id of the student s4 is : " << s4.display() << endl;
+     
+
+     return 0;
+}
