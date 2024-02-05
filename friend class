@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std; 
+
+class mango;
+class apple 
+{
+    public: int x;
+   
+         void input()
+         {
+            cin >> x ;
+         }
+          friend mango;
+};
+
+class mango
+{
+    int y;
+    public : 
+    void enter()
+    {
+        cin >> y;
+    }
+    void sum(apple a)
+    {
+        int z;
+        z= a.x +y;
+        cout << "sum of the numbers is : " << z ;
+    }
+};
+
+int main() 
+
+{
+  apple a;
+  mango m;
+  a.input();
+  m.enter();
+   m.sum(a);
+   return 0;
+}
